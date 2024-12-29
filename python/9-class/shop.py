@@ -7,11 +7,12 @@ class Shop:
         ]
         self.bolts_price = 2
 
-    def buy_sword(self, purse):
+    def buy_sword(self, purse, sword_name: str):
         for sword in self.swords:
-            if purse.get_balance() >= sword.price:
-                purse.spend_balance(sword.price)
-            return sword
+            if sword.name == sword_name()
+                if purse.get_balance() >= sword.price:
+                    purse.spend_balance(sword.price)
+                    return sword
 
     def buy_bolts(self, purse, amount: int):
         if purse.get_balance() >= self.bolts_price * amount:
