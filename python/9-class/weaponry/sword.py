@@ -21,3 +21,4 @@ class Sword(Weapon):
             damage = damage + 10
         super().__init__(ranged, damage)
         self.name = name
+        self.price = price

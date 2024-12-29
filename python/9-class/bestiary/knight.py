@@ -18,7 +18,8 @@ class Knight:
 
     def loads_crossbow(self, bolts: int):
         for bolt in range(bolts):
-            self.equipment.crossbow.load()
+            if self.equipment.bolts_bag.use_bolt():
+                self.equipment.crossbow.load()
 
     def __repr__(self):
         return f"Вот я — {self.name}, мой меч — {self.equipment.sword.name}!"
@@ -32,3 +33,4 @@ class Equipment:
     sword: Sword | None = None
     shield: Shield | None = None
     crossbow: Crossbow | None = None
+    bolts_bag: BoltsBag = BoltsBag()
